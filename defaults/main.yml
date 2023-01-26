@@ -32,7 +32,7 @@ galaxy_tools_base_dir: /home/galaxy/tmp
 galaxy_tools_admin_user_preset_api_key: yes
 
 # Blank variable to make sure it's defined
-galaxy_tools_api_key: 'acdroso65'
+galaxy_tools_api_key: 'artbio2024'
 
 # List of workflow files to be installed. List the path to the workflows, e.g.:
 # galaxy_tools_workflows:
@@ -43,9 +43,9 @@ galaxy_tools_workflows: []
 ## Variables below are used only if the galaxy_install_bootstrap_user var is set
 
 # A user for the Galaxy bootstrap user
-galaxy_tools_admin_user: admin@example.org
-galaxy_tools_admin_username: chris
-galaxy_tools_admin_user_password: acdroso65
+galaxy_tools_admin_user: 'admin@galaxy.org'
+galaxy_tools_admin_username: 'admin'
+galaxy_tools_admin_user_password: 'artbio2024'
 
 # Name of Galaxy's PID file
 galaxy_tools_pid_file_name: main.pid
@@ -59,9 +59,6 @@ galaxy_tools_log_file_name: main.log
 
 # User name for the system galaxy user
 galaxy_user_name: galaxy
-
-# A path where Galaxy is installed
-galaxy_server_dir: /mnt/galaxy/galaxy-app
 
 # A system path where a virtualenv for Galaxy is installed
 galaxy_venv_dir: "{{ galaxy_server_dir }}/.venv"
