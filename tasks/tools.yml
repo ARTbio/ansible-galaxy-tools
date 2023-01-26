@@ -4,9 +4,9 @@
   pip:
     name:
       - ephemeris==0.10.7  # Pinned version should make sure ephemeris version matches what the role has been tested with
-      - bioblend==0.16.0
+      - bioblend==0.17.0
     state: present
-    virtualenv: "{{ galaxy_tools_base_dir }}/venv"
+    virtualenv: "{{ galaxy_server_dir }}/.venv"
     virtualenv_command: "{{ pip_virtualenv_command | default( 'virtualenv' ) }}"
     virtualenv_python: "{{ pip_virtualenv_python | default( 'python3' ) }}"
 

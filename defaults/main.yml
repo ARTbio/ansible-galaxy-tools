@@ -3,7 +3,7 @@
 galaxy_tools_install_tools: yes
 galaxy_tools_install_data_managers: no 
 galaxy_tools_install_workflows: no
-galaxy_tools_create_bootstrap_user: no
+galaxy_tools_create_bootstrap_user: yes
 galaxy_tools_delete_bootstrap_user: no
 
 # If enabled, the restart handler will attempt to restart Galaxy after tool
@@ -12,11 +12,11 @@ galaxy_restart_handler_enabled: no
 
 # A URL or an IP address for the Galaxy instance where the tools are to be
 # installed
-galaxy_tools_galaxy_instance_url: http://127.0.0.1:8080
+galaxy_tools_galaxy_instance_url: http://34.155.97.141
 
 # A list of yml files that list the tools to be installed. See `files/tool_list.yaml.sample`
 # file for more about the format requirements of this file. The file names must be unique.
-galaxy_tools_tool_list_files: [ "tool_list.yaml" ]
+galaxy_tools_tool_list_files: [ "files/tool_list.yaml.sample" ]
 
 # A yml file that lists the data-managers and genomes to be installed
 # see `files/tool_list.yaml.sample`
@@ -26,13 +26,13 @@ galaxy_tools_data_managers_list: "run_data_managers.yaml"
 galaxy_tools_ignore_errors: true
 
 # A system path from where this role will be run
-galaxy_tools_base_dir: /tmp
+galaxy_tools_base_dir: /home/galaxy/tmp
 
 # Set this to yes and change galaxy_tools_api_key to a string to create a predefined api key for the bootstrap user.
-galaxy_tools_admin_user_preset_api_key: no
+galaxy_tools_admin_user_preset_api_key: yes
 
 # Blank variable to make sure it's defined
-galaxy_tools_api_key: ''
+galaxy_tools_api_key: 'acdroso65'
 
 # List of workflow files to be installed. List the path to the workflows, e.g.:
 # galaxy_tools_workflows:
@@ -43,8 +43,9 @@ galaxy_tools_workflows: []
 ## Variables below are used only if the galaxy_install_bootstrap_user var is set
 
 # A user for the Galaxy bootstrap user
-galaxy_tools_admin_user: cloud@galaxyproject.org
-galaxy_tools_admin_username: cloud
+galaxy_tools_admin_user: admin@example.org
+galaxy_tools_admin_username: chris
+galaxy_tools_admin_user_password: acdroso65
 
 # Name of Galaxy's PID file
 galaxy_tools_pid_file_name: main.pid
@@ -66,7 +67,7 @@ galaxy_server_dir: /mnt/galaxy/galaxy-app
 galaxy_venv_dir: "{{ galaxy_server_dir }}/.venv"
 
 # A system path for Galaxy's main configuration file
-galaxy_config_file: "{{ galaxy_server_dir }}/config/galaxy.ini"
+galaxy_config_file: "{{ galaxy_server_dir }}/config/galaxy.yml"
 
 ## Set this to 'yes' if you are targeting galaxy in a docker container
 galaxy_runs_in_docker: no
