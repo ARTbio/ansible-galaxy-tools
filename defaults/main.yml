@@ -12,7 +12,7 @@ galaxy_restart_handler_enabled: no
 
 # A URL or an IP address for the Galaxy instance where the tools are to be
 # installed
-galaxy_tools_galaxy_instance_url: http://34.155.97.141
+galaxy_tools_galaxy_instance_url: http://"{{ ansible_ssh_host }}"
 
 # A list of yml files that list the tools to be installed. See `files/tool_list.yaml.sample`
 # file for more about the format requirements of this file. The file names must be unique.
