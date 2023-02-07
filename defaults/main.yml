@@ -43,7 +43,7 @@ galaxy_tools_workflows: []
 ## Variables below are used only if the galaxy_install_bootstrap_user var is set
 
 # A user for the Galaxy bootstrap user
-galaxy_tools_admin_user: 'admin@galaxy.org'
+galaxy_tools_admin_user: 'admin@example.org'
 galaxy_tools_admin_username: 'admin'
 galaxy_tools_admin_user_password: 'artbio2024'
 
