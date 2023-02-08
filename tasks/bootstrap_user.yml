@@ -1,10 +1,10 @@
 ---
 
 - name: Copy the bootstrap user management script
-  copy: src=manage_bootstrap_user.py dest={{ galaxy_server_dir }}/manage_bootstrap_user.py owner={{ galaxy_user_name }}
+  copy: src=manage_bootstrap_user.py dest={{ galaxy_server_dir }}/manage_bootstrap_user.py owner={{ galaxy_user }}
   
 - name: Copy disposable_email_whitelist.conf in config folder
-  copy: src=disposable_email_whitelist.conf dest={{ galaxy_config_dir }}/disposable_email_whitelist.conf owner={{ galaxy_user_name }}
+  copy: src=disposable_email_whitelist.conf dest={{ galaxy_config_dir }}/disposable_email_whitelist.conf owner={{ galaxy_user }}
 
 - name: Create Galaxy bootstrap user
   become: yes
