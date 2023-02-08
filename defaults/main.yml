@@ -58,7 +58,7 @@ galaxy_tools_log_file_name: main.log
 ## playbooks and are hence scoped differently
 
 # User name for the system galaxy user
-galaxy_user_name: galaxy
+galaxy_user_name: "{{ galaxy_user }}"
 
 # A system path where a virtualenv for Galaxy is installed
 galaxy_venv_dir: "{{ galaxy_server_dir }}/.venv"
