@@ -3,7 +3,7 @@ galaxy_tools_install_tools: yes
 galaxy_tools_install_data_managers: no
 galaxy_tools_install_workflows: no
 galaxy_tools_create_bootstrap_user: yes
-galaxy_tools_delete_bootstrap_user: no
+galaxy_tools_delete_bootstrap_user: no  # The option 'yes' is currently broken
 
 # If enabled, the restart handler will attempt to restart Galaxy after tool
 # installation, assuming Galaxy is controlled by run.sh, docker or supervisor.
@@ -31,7 +31,7 @@ galaxy_tools_base_dir: /home/galaxy/tmp
 galaxy_tools_admin_user_preset_api_key: yes
 
 # Blank variable to make sure it's defined
-galaxy_tools_api_key: "artbio2024"
+galaxy_tools_api_key: "myverysecretapikey"
 
 # List of workflow files to be installed. List the path to the workflows, e.g.:
 # galaxy_tools_workflows:
@@ -42,9 +42,9 @@ galaxy_tools_workflows: []
 ## Variables below are used only if the galaxy_install_bootstrap_user var is set
 
 # A user for the Galaxy bootstrap user
-galaxy_tools_admin_user: 'admin@example.org'
-galaxy_tools_admin_username: 'admin'
-galaxy_tools_admin_user_password: 'artbio2024'
+galaxy_tools_admin_user: 'tooladmin@galaxy.org'
+galaxy_tools_admin_username: 'tooladmin'
+galaxy_tools_admin_user_password: 'artbio2025'
 
 # Name of Galaxy's PID file
 galaxy_tools_pid_file_name: main.pid
