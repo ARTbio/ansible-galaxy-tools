@@ -43,10 +43,6 @@
 #galaxy_instance: <Galaxy instance IP>
 
 tools:
-- name: fastqc
-  owner: devteam
-  tool_panel_section_id: cshl_library_information
-  tool_shed_url: https://toolshed.g2.bx.psu.edu
 - name: bedtools
   owner: iuc
   tool_panel_section_label: 'BED tools'

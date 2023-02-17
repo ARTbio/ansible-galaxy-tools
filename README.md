@@ -35,5 +35,3 @@ given part of the role should be executed:
    tools installation script
  - `galaxy_tools_create_bootstrap_user`: (default: `no`) whether or not to
    create a bootstrap Galaxy admin user
- - `galaxy_tools_delete_bootstrap_user`: (default: `no`) whether or not to
-   delete a bootstrap Galaxy admin user
