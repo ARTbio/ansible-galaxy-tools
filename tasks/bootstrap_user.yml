@@ -1,10 +1,10 @@
 ---
 
 - name: Copy the bootstrap user management script
-  copy: src=manage_bootstrap_user.py dest={{ galaxy_server_dir }}/manage_bootstrap_user.py owner={{ galaxy_user_name }}
-
-- name: Copy disposable_email_whitelist.conf in config folder
-  copy: src=disposable_email_whitelist.conf dest={{ galaxy_config_dir }}/disposable_email_whitelist.conf owner={{ galaxy_user_name }}
+  copy:
+    src: manage_bootstrap_user.py
+    dest: "{{ galaxy_server_dir }}/manage_bootstrap_user.py"
+    owner: "{{ galaxy_user_name }}"
 
 - name: Create Galaxy bootstrap user
   command: >
@@ -27,8 +27,11 @@
     replace: '\1,{{ galaxy_tools_admin_user }}'
 
 - name: Remove the bootstrap user management script
-  file: dest={{ galaxy_server_dir }}/manage_bootstrap_user.py state=absent
+  file:
+    dest: "{{ galaxy_server_dir }}/manage_bootstrap_user.py"
+    state: absent
 
 # This needs to come last or it will short-circuit execution when the galaxy_tools_api_key fact is set
-- set_fact: galaxy_tools_api_key="{{ api_key.stdout_lines[0] }}"  #"
+- set_fact:
+    galaxy_tools_api_key: "{{ api_key.stdout_lines[0] }}"
   when: (create_user is defined) and create_user

@@ -17,8 +17,3 @@
 
 - include_tasks: workflows.yml
   when: galaxy_tools_install_workflows
-
-- include_tasks: "bootstrap_user.yml"
-  vars:
-    delete_user: "{{ galaxy_tools_delete_bootstrap_user }}"
-  when: galaxy_tools_delete_bootstrap_user
