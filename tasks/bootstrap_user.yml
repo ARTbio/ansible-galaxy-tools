@@ -23,20 +23,14 @@
   replace: dest={{ galaxy_config_file }} regexp="^[ ]*admin_users[ ]*=[ ]*" replace="admin_users = {{ galaxy_tools_admin_user }},"  #"
   register: admin_users_found
   when: (create_user is defined) and create_user
-  notify:
-    - ansible-galaxy-tools restart galaxy
 
 - name: Set bootstrap user as Galaxy Admin with config file in ini-paste style
   lineinfile: dest={{ galaxy_config_file }} state=present insertafter="app:main" regexp="^[ ]*admin_users[ ]*=[ ]*" line="admin_users = {{ galaxy_tools_admin_user }}"  #"
   when: (create_user is defined) and create_user and (admin_users_found.msg == "") and ('.ini' in galaxy_config_file)
-  notify:
-    - ansible-galaxy-tools restart galaxy
 
 - name: Set bootstrap user as Galaxy Admin with config file in yaml style
   lineinfile: dest={{ galaxy_config_file }} state=present regexp='^([ ]*)admin_users[ ]*{{ ":" }}.*' line='    admin_users{{ ":" }} {{ galaxy_tools_admin_user }}'
   when: (create_user is defined) and create_user and (admin_users_found.msg == "") and ('.yml' in galaxy_config_file)
-  notify:
-    - ansible-galaxy-tools restart galaxy
 
 - meta: flush_handlers
   when: (create_user is defined) and create_user and (admin_users_found.msg == "")
@@ -44,8 +38,6 @@
 - name: Delete Galaxy bootstrap user
   command: chdir={{ galaxy_server_dir }} {{ galaxy_venv_dir }}/bin/python manage_bootstrap_user.py -c {{ galaxy_config_file }} delete -u {{ galaxy_tools_admin_username }}
   when: (delete_user is defined) and delete_user
-  notify:
-    - ansible-galaxy-tools restart galaxy
 
 - name: Remove bootstrap user as Galaxy Admin if admin_users tag was already in the config file before bootstrap_user task
   replace: dest={{ galaxy_config_file }} regexp="admin_users = {{ galaxy_tools_admin_user }}," replace="admin_users = "  #"
