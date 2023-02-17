@@ -63,8 +63,3 @@ galaxy_venv_dir: "{{ galaxy_server_dir }}/.venv"
 
 # A system path for Galaxy's main configuration file
 galaxy_config_file: "{{ galaxy_server_dir }}/config/galaxy.yml"
-
-## Set this to 'yes' if you are targeting galaxy in a docker container
-galaxy_runs_in_docker: no
-# galaxy_docker_container_id is either the container id or name shown by `docker ps`
-galaxy_docker_container_id: galaxy
