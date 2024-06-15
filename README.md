@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/galaxyproject/ansible-galaxy-tools.svg?branch=master)](https://travis-ci.org/galaxyproject/ansible-galaxy-tools)
-
 This Ansible role is for automated installation of tools from a Tool Shed into
 Galaxy.
 
@@ -17,12 +15,10 @@ that will get you up and running in minutes.
 Variables
 ---------
 ### Required variables ###
-Only one of the two variables is requried (if both are set, the API key
-takes precedence and a bootstrap user is not created):
-- `galaxy_tools_api_key`: the Galaxy API key for an admin user on the target
-  Galaxy instance (not required if the bootstrap user is being created)
-- `galaxy_tools_admin_user_password`: a password for the Galaxy bootstrap user
-  (required only if `galaxy_install_bootstrap_user` variable is set)
+Warning ! warning !
+tool_admin_user name, email, and password are now hardcoded in the
+python script `manage_bootstrap_user.py`, for the sake of simplicity.
+A new api key is simply generated for this user, each the playbook is run.
 
 ### Optional variables ###
 See `defaults/main.yml` for the available variables and their defaults.
@@ -33,5 +29,3 @@ given part of the role should be executed:
 
  - `galaxy_tools_install_tools`: (default: `yes`) whether or not to run the
    tools installation script
- - `galaxy_tools_create_bootstrap_user`: (default: `no`) whether or not to
-   create a bootstrap Galaxy admin user
