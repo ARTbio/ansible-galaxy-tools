@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  author: ["The Galaxy Project", "ARTbio"]
+  description: Automate installation of tools into Galaxy.
+  company: ARTbio
+  license: "MIT, MIT sublicence"
+  min_ansible_version: 3.0
+  platforms:
+  - name: Ubuntu
+    versions:
+    - focal
+  categories:
+  - system
+dependencies: []
