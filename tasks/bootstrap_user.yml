@@ -8,7 +8,7 @@
 
 - name: Create Galaxy bootstrap user
   command: >
-    chdir={{ galaxy_server_dir }} {{ galaxy_venv_dir }}/bin/python manage_bootstrap_user.py
+    chdir={{ galaxy_server_dir }} PYTHONPATH=lib GALAXY_CONFIG_FILE=config/galaxy.yml {{ galaxy_venv_dir }}/bin/python manage_bootstrap_user.py
   register: api_key
 
 # This needs to come last or it will short-circuit execution when the galaxy_tools_api_key fact is set
