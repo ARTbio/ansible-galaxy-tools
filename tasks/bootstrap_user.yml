@@ -18,10 +18,9 @@
 - set_fact:
     galaxy_tools_api_key: "{{ api_key.stdout_lines[0] }}"
 
-- name: Export api key as environment variable
-  shell: 'echo "{{ galaxy_tools_api_key }}"'
-  environment:
-    BIOBLEND_GALAXY_API_KEY: "{{ galaxy_tools_api_key }}"
-
-- name: Echo BIOBLEND_GALAXY_API_KEY variable again
-  shell: "echo $BIOBLEND_GALAXY_API_KEY"
+- name: print api key to apikey.txt
+  copy:
+    content: "{{ galaxy_tools_api_key }}"
+    dest: "apikey.txt"
+  become: yes
+  become_user: root
