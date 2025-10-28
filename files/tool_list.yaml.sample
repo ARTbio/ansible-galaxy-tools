@@ -43,9 +43,9 @@
 #galaxy_instance: <Galaxy instance IP>
 
 tools:
-- name: bedtools
-  owner: iuc
-  tool_panel_section_label: 'BED tools'
+- name: fetch_fasta_from_ncbi
+  owner: artbio
+  tool_panel_section_label: 'ARTbio tools'
 - name: data_manager_fetch_genome_dbkeys_all_fasta
   owner: devteam
   tool_shed_url: https://toolshed.g2.bx.psu.edu
